@@ -8,7 +8,11 @@ public class Main {
 
         Task t1 = new Task("T1", 1, 20);
 
-//        ArrayList<Task> taskSet = new ArrayList<>();
+        String firstTaskName = t1.getTaskName();
+
+
+        ArrayList<Task> taskSet = new ArrayList<>();
         t1.printTask();
+        System.out.println(firstTaskName);
     }
 }
