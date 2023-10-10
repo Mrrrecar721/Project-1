@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+
 public class NewThread implements Runnable {
     String threadName;
     Thread t;
+
+    ArrayList<Task> arrList;
 
     NewThread(String name) {
         this.threadName = name;
