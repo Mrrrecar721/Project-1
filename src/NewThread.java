@@ -6,7 +6,7 @@ public class NewThread implements Runnable {
 
     ArrayList<Task> arrList;
 
-    NewThread(String name) {
+    NewThread(String name, ArrayList<Task> taskSet) {
         this.threadName = name;
         t = new Thread(this, threadName);
         System.out.println("New Thread: " + t);

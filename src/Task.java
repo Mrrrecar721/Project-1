@@ -3,6 +3,7 @@ public class Task {
     private int priority;
     private int burst;
 
+
     //Constructor
     public Task(String name, int priority, int burst){
         this.taskName = name;

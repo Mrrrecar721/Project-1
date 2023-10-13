@@ -19,20 +19,7 @@ public class Main {
 
         System.out.println(taskSet.get(1).getTaskName());
 
-        NewThread one = new NewThread("one");
-        NewThread two  = new NewThread("two");
-        NewThread three = new NewThread("three");
-
-
-        one.t.start();
-        two.t.start();
-        three.t.start();
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e){
-            System.out.println("Main thread Interrupted.");
-        }
-        System.out.println("Main thread exiting.");
+        FirstCome one = new FirstCome("one", taskSet);
+        one.run();
     }
 }
