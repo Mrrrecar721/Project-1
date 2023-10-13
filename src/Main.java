@@ -17,9 +17,7 @@ public class Main {
         taskSet.add(3, t4);
         taskSet.add(4, t5);
 
-        System.out.println(taskSet.get(1).getTaskName());
-
-        FirstCome one = new FirstCome("one", taskSet);
-        one.run();
+        FirstCome firstComeFirstServe = new FirstCome("one", taskSet);
+        firstComeFirstServe.run();
     }
 }
