@@ -4,7 +4,6 @@ import java.util.ArrayList;
 // CSCI-340 Project-1
 public class Main {
     public static void main(String[] args) {
-
         Task t1 = new Task("T1", 2, 20);
         Task t2 = new Task("T2", 4, 25);
         Task t3 = new Task("T3", 3, 25);
