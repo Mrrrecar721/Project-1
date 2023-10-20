@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbbcc62c-b5ac-41bf-9bfb-589c1b83600d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/QuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShortJobFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortJobFirst.java" afterDir="false" />
-    </list>
+    <list default="true" id="dbbcc62c-b5ac-41bf-9bfb-589c1b83600d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +58,7 @@
       <workItem from="1696565132842" duration="13121000" />
       <workItem from="1697077966151" duration="2514000" />
       <workItem from="1697164078781" duration="13611000" />
-      <workItem from="1697658453744" duration="6066000" />
+      <workItem from="1697658453744" duration="6372000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
