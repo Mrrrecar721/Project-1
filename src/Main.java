@@ -18,5 +18,10 @@ public class Main {
 
         FirstCome firstComeFirstServe = new FirstCome("one", taskSet);
         firstComeFirstServe.run();
+
+        System.out.print("\n");
+
+        ShortJobFirst shortJobFirst = new ShortJobFirst("two", taskSet);
+        shortJobFirst.run();
     }
 }
