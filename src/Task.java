@@ -3,12 +3,15 @@ public class Task {
     private int priority;
     private int burst;
 
+    private int arrivalTime;
+
 
     //Constructor
     public Task(String name, int priority, int burst){
         this.taskName = name;
         this.priority = priority;
         this.burst = burst;
+        this.arrivalTime = 0;
     }
 
     //Setters
@@ -21,6 +24,9 @@ public class Task {
     public void setBurst(int burst) {
         this.burst = burst;
     }
+    public void setArrivalTime(int arrival) {
+        this.arrivalTime = arrival;
+    }
 
     //Getters
     public int getPriority() {
@@ -32,6 +38,8 @@ public class Task {
     public int getBurst() {
         return burst;
     }
+
+    public int getArrivalTime() {return arrivalTime; }
 
     //Print Task
     public void printTask(){

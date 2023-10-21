@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 // Richard Recar
 // CSCI-340 Project-1
@@ -23,5 +24,11 @@ public class Main {
 
         ShortJobFirst shortJobFirst = new ShortJobFirst("two", taskSet);
         shortJobFirst.run();
+
+        System.out.print("\n");
+
+        PreemptivePriority preemptivePriority = new PreemptivePriority("three", taskSet);
+        System.out.print("\n");
+        preemptivePriority.run();
     }
 }
