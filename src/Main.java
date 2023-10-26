@@ -1,10 +1,12 @@
 import java.util.ArrayList;
-import java.util.Random;
+
 
 // Richard Recar
 // CSCI-340 Project-1
 public class Main {
     public static void main(String[] args) {
+
+        //Create Hardcoded Input and place in list to be used by algorithms
         Task t1 = new Task("T1", 2, 20);
         Task t2 = new Task("T2", 4, 25);
         Task t3 = new Task("T3", 3, 25);
@@ -16,19 +18,28 @@ public class Main {
         taskSet.add(2, t3);
         taskSet.add(3, t4);
         taskSet.add(4, t5);
+        ArrayList<Task> taskSet2 = new ArrayList<>(taskSet);
+        ArrayList<Task> taskSet3 = new ArrayList<>(taskSet);
 
+        //Instance of First Come First Serve Algorithm Class
         FirstCome firstComeFirstServe = new FirstCome("one", taskSet);
         firstComeFirstServe.run();
 
+        //Spacing
         System.out.print("\n");
-
-        ShortJobFirst shortJobFirst = new ShortJobFirst("two", taskSet);
+        //Instance of Shortest Job First Algorithm Class
+        ShortJobFirst shortJobFirst = new ShortJobFirst("two", taskSet2);
         shortJobFirst.run();
 
+        //Spacing
         System.out.print("\n");
 
-        PreemptivePriority preemptivePriority = new PreemptivePriority("three", taskSet);
+        //Instance of Preemptive Priority Algorithm Class
+        PreemptivePriority preemptivePriority = new PreemptivePriority("three", taskSet3);
         System.out.print("\n");
         preemptivePriority.run();
+
+        //Instance of Round Robin Algorithm Class
+
     }
 }

@@ -3,18 +3,21 @@ public class Task {
     private int priority;
     private int burst;
 
+    private int burstLeft;
+
     private int arrivalTime;
 
 
-    //Constructor
+    //Task Class Constructor
     public Task(String name, int priority, int burst){
         this.taskName = name;
         this.priority = priority;
         this.burst = burst;
+        this.burstLeft = burst;
         this.arrivalTime = 0;
     }
 
-    //Setters
+    //Setters (ability to modify members)
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
@@ -24,11 +27,14 @@ public class Task {
     public void setBurst(int burst) {
         this.burst = burst;
     }
+    public void setBurstLeft(int burstLeft) {
+        this.burstLeft = burstLeft;
+    }
     public void setArrivalTime(int arrival) {
         this.arrivalTime = arrival;
     }
 
-    //Getters
+    //Getters (retrieving members)
     public int getPriority() {
         return priority;
     }

@@ -9,7 +9,7 @@ public class FirstCome implements Runnable{
     ArrayList<Task> arrList;
 
     final int arrSize;
-
+    //Constuctor, calls two functions to get average wait time and average turn around time
     FirstCome(String name, ArrayList<Task> taskList) {
         this.arrList = taskList;
         this.arrSize = arrList.size();
@@ -25,6 +25,7 @@ public class FirstCome implements Runnable{
             avg += arrList.get(i).getBurst();
             avgWait+= avg;
         }
+        //Take sum of burst times and divide by number of tasks
         avgWait /= arrSize;
     }
 
@@ -36,6 +37,7 @@ public class FirstCome implements Runnable{
             avgTurn += avg;
             count++;
         }
+        //Take sum of burst times and divide by number of tasks
         avgTurn /= arrSize;
     }
 
@@ -43,6 +45,7 @@ public class FirstCome implements Runnable{
     public void run() {
         int avg = 0;
         int count= 0;
+        System.out.println("First Come First Serve\n----------------------");
         for (Task task : arrList) {
             avg += arrList.get(count).getBurst();
             System.out.print(task.getTaskName() + "[" + (avg - arrList.get(count).getBurst()) + "-" + avg + "] ");

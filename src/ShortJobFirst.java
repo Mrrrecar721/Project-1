@@ -4,18 +4,22 @@ public class ShortJobFirst implements Runnable {
     String threadName;
     int avgWait;
     int avgTurn;
+
+    //To use run()
     Thread t;
 
     ArrayList<Task> arrList;
 
     final int arrSize;
 
+    //Constuctor, calls two functions to get average wait time and average turn around time
     ShortJobFirst(String name, ArrayList<Task> taskList) {
         this.arrList = taskList;
         this.arrSize = arrList.size();
         this.threadName = name;
         t = new Thread(this, threadName);
-        QuickSort.quickSort(taskList, 0, arrSize-1);
+        //Call to quickSort to oder by Arrival time
+        BurstSort.quickSort(taskList, 0, arrSize-1);
         averageWait();
         avgTurnAround();
     }
@@ -26,6 +30,7 @@ public class ShortJobFirst implements Runnable {
             avg += arrList.get(i).getBurst();
             avgWait+= avg;
         }
+        //Take sum of burst times and divide by number of tasks
         avgWait /= arrSize;
     }
 
@@ -37,6 +42,7 @@ public class ShortJobFirst implements Runnable {
             avgTurn += avg;
             count++;
         }
+        //Take sum of burst times and divide by number of tasks
         avgTurn /= arrSize;
     }
 
@@ -44,6 +50,7 @@ public class ShortJobFirst implements Runnable {
     public void run() {
         int avg = 0;
         int count= 0;
+        System.out.println("Shortest Job First\n------------------");
         for (Task task : arrList) {
             avg += arrList.get(count).getBurst();
             System.out.print(task.getTaskName() + "[" + (avg - arrList.get(count).getBurst()) + "-" + avg + "] ");

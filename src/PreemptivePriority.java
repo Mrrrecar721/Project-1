@@ -3,18 +3,15 @@ import java.util.Random;
 
 public class PreemptivePriority implements Runnable {
     String threadName;
-    int avgWait;
-    int avgTurn;
+    int completionTime;
+    int turnAroundT;
+    int waitTime;
+
     Thread t;
 
     ArrayList<Task> arrList;
 
     final int arrSize;
-
-    //Random Gen
-
-
-
 
     PreemptivePriority(String name, ArrayList<Task> taskList) {
         this.arrList = taskList;
@@ -22,8 +19,7 @@ public class PreemptivePriority implements Runnable {
         this.threadName = name;
         t = new Thread(this, threadName);
         randomBurst();
-        averageWait();
-        avgTurnAround();
+        ArrivalSort.quickSort(taskList, 0, arrSize-1);
     }
 
     private void randomBurst(){
@@ -37,35 +33,28 @@ public class PreemptivePriority implements Runnable {
         }
     }
 
-    private void averageWait(){
-        int avg = 0;
-        for (int i = 0; i < arrSize-1; i++) {
-            avg += arrList.get(i).getBurst();
-            avgWait+= avg;
+    public void process(){
+        ArrayList<Task> tempList = new ArrayList<Task>(arrList);
+        ArrayList<Integer> arrivalTimes = new ArrayList<Integer>();
+        ArrayList<Task> scheduled = new ArrayList<Task>();
+        scheduled.add(tempList.get(0));
+
+        for (int i = 0; i < arrSize; i++) {
+            arrivalTimes.add(tempList.get(i).getArrivalTime());
+            System.out.println(tempList.get(i).getArrivalTime() + " " + tempList.get(i).getPriority() + " " + tempList.get(i).getBurst());
+//            System.out.println(arrivalTimes.get(i));
         }
-        avgWait /= arrSize;
     }
 
-    private void avgTurnAround(){
-        int avg = 0;
-        int count = 0;
-        for (Task task : arrList) {
-            avg += arrList.get(count).getBurst();
-            avgTurn += avg;
-            count++;
-        }
-        avgTurn /= arrSize;
-    }
+
+
 
     @Override
     public void run() {
         int avg = 0;
         int count= 0;
-        for (Task task : arrList) {
-            avg += arrList.get(count).getBurst();
-            System.out.print(task.getTaskName() + "[" + (avg - arrList.get(count).getBurst()) + "-" + avg + "] ");
-            count++;
-        }
-        System.out.println("\nAverage Wait Time: " + avgWait + "ms\n" + "Average Turnaround Time: " + avgTurn + "ms");
+
+        this.process();
+
     }
 }

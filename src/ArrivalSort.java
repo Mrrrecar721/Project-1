@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-public class QuickSort {
+public class ArrivalSort {
+    //partition = pivot position
     static int partition(ArrayList<Task> arr, int start, int end)
     {
-//        int pivot = end;
         int i = start - 1;
         for(int j = start; j<=end; j++)
         {
-            if(arr.get(j).getBurst() <= arr.get(end).getBurst())
+            if(arr.get(j).getArrivalTime() <= arr.get(end).getArrivalTime())
             {
                 i++;
                 Task temp = arr.get(i);
@@ -17,7 +17,8 @@ public class QuickSort {
         }
         return i;
     }
-
+    //Entry method calls partition() to return i which represents pivot position
+    //quicksort recursively calls itself
     public static void quickSort(ArrayList<Task> arr, int start, int end)
     {
         if(start < end)
